@@ -57,12 +57,14 @@ public class Main extends Application {
             // Keeps track of each column's y coordinate for next iteration to draw a character.
             int[] ypos = resize(gc, fontSize);
 
+            // Random generator for characters and symbols
+            Random random = new Random();
+
             @Override
             public void handle(long now) {
                 // elapsed time occurred so let's begin drawing on the canvas.
                 if (now > lastTimerCall + ANIMATION_DELAY) {
                     lastTimerCall = now;
-
 
                     int w = (int) canvas.getWidth();
                     int h = (int) canvas.getHeight();
@@ -86,9 +88,8 @@ public class Main extends Application {
 
                     // Based on the stored y coordinate allows us to draw the character next (beneath the previous)
                     for (int i = 0; i < ypos.length; i++) {
-                        // pick a random character (unicode) between decimal 932 to 960.
-                        Random random = new Random();
 
+                        // pick a random character (using unicode)
                         //char ch = (char) random.ints(12353, 12380) // Japanese
                         //char ch = (char) random.ints(12100, 12200) // Chinese
                         char ch = (char) random.ints(932, 960) // Greek
