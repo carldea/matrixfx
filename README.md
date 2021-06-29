@@ -1,6 +1,9 @@
 # Matrix Effect
+A JavaFX application that mimics the falling/raining green code effect.
 
-This Gluon sample was generated from https://start.gluon.io
+![Matrix Falling Code Effect](https://github.com/carldea/matrixfx/raw/main/IntroPic.png)
+
+This project has been generated from Gluon at https://start.gluon.io
 
 ## Basic Requirements
 
