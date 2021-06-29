@@ -9,7 +9,6 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-
 import java.util.Random;
 
 /**
@@ -20,13 +19,13 @@ import java.util.Random;
  *
  */
 public class Main extends Application {
-    private String color = "#00ff00"; // the color green
+    public static String color = "#00ff00"; // the color green
 
     @Override
     public void start(Stage stage) {
         StackPane root = new StackPane();
 
-        Canvas canvas = new Canvas(640, 480);
+        Canvas canvas = new Canvas(1280, 640);
 
         // bind the width and height properties when screen is resized.
         canvas.widthProperty().bind(root.widthProperty());
@@ -36,7 +35,7 @@ public class Main extends Application {
 
         root.getChildren().add(canvas);
 
-        Scene scene = new Scene(root, 640, 480);
+        Scene scene = new Scene(root, 1280, 640);
         stage.setScene(scene);
         stage.show();
     }
@@ -49,7 +48,7 @@ public class Main extends Application {
         new AnimationTimer() {
             long lastTimerCall = 0;
             final long NANOS_PER_MILLI = 1000000; //nanoseconds in a millisecond
-            final long ANIMATION_DELAY = 50 * NANOS_PER_MILLI; // convert 30 ms to ns
+            final long ANIMATION_DELAY = 50 * NANOS_PER_MILLI; // convert 50 ms to ns
 
             // Capture current dimensions of the Canvas
             int prevWidth = (int) canvas.getWidth();
